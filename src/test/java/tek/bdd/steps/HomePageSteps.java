@@ -2,6 +2,7 @@ package tek.bdd.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import tek.bdd.utility.SeleniumUtility;
 
@@ -11,11 +12,11 @@ public class HomePageSteps extends SeleniumUtility {
     public void openBrowserAndNavigate() {
         setupBrowser();
     }
-    @Then("validate home page title is TEK Insurance App")
-    public void validateHomePageTitle() {
-        String text = getElementText(By.className("chakra-heading css-1at26de"));
+    @Then("validate home page title is {string}")
+   public void validateTheTitleIs(String expectedResult) {
+        String actualResult = getTitleElement();
 
-        System.out.println(text);
+        Assert.assertEquals(    "TEKSchool Insurance" , actualResult);
     }
     @Then("close the browser")
     public void closeBrowser () {
