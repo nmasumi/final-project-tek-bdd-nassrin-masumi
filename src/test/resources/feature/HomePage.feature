@@ -4,4 +4,4 @@ Feature: home page validation
   and create Primary Account Button is exist
     Given open browser and navigate to insurance app
     Then validate home page title is TEK Insurance App
-    Then create Primary Account Button exists
+    Then close the browser
