@@ -2,5 +2,7 @@ Feature: home page validation
 
   Scenario: Validate When user navigate to home page title is TEK Insurance UI
   and create Primary Account Button is exist
-    Given the user navigates to the home page
+    Given open browser and navigate to insurance app
+    Then validate top left corner is TEK Insurance App
+    Then create
 
