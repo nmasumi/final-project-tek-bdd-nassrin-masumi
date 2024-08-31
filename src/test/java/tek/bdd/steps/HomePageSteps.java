@@ -16,7 +16,7 @@ public class HomePageSteps extends SeleniumUtility {
    public void validateTheTitleIs(String expectedResult) {
         String actualResult = getTitleElement();
 
-        Assert.assertEquals(    "TEKSchool Insurance" , actualResult);
+        Assert.assertEquals(    "TEKSchool Insurance App" , actualResult);
     }
     @Then("close the browser")
     public void closeBrowser () {
