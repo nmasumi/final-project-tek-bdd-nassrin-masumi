@@ -8,18 +8,16 @@ import tek.bdd.utility.SeleniumUtility;
 
 public class HomePageSteps extends SeleniumUtility {
 
-    @Given("open browser and navigate to insurance app")
-    public void openBrowserAndNavigate() {
-        setupBrowser();
-    }
-    @Then("validate home page title is {string}")
-   public void validateTheTitleIs(String expectedResult) {
-        String actualResult = getTitleElement();
-
+    @Then("validate home page title is TEK Insurance App")
+   public void validateHomePageTitle(String expectedResult) {
+        String actualResult = getElementText(By.className("chakra-heading css-1at26de"));
         Assert.assertEquals(    "TEKSchool Insurance App" , actualResult);
+        System.out.println(actualResult);
     }
-    @Then("close the browser")
-    public void closeBrowser () {
-        quitBrowser();
+    @Then("validate Create Primary Account button is exist")
+    public void validateCreatePrimaryAccountButton() {
+       boolean isCreatePrimaryAccountButtonIsExist = isElementEnabled(By.className("chakra-button css-1jp0m7c"));
+       Assert.assertTrue(isCreatePrimaryAccountButtonIsExist);
+
     }
 }
